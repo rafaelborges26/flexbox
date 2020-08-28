@@ -1,0 +1,42 @@
+html, body #app {
+    height: 100%;
+    margin: 0;
+}
+
+#app {
+display: flex;
+flex-direction: row; /*tbm tem o column nesse caso vai inverter a posição do align-items e justify-content*/
+
+align-items: flex-start; /*de cima pra baixo*/
+justify-content: flex-start; /*do lado pro outro*/
+/*justify-content: space-between; espaço entre eles*/
+/*justify-content: space-around; espaço entre eles com um espaço na margem*/
+flex-wrap: wrap; /*elementos quebrarem a linha*/
+align-content: flex-start;
+
+}
+
+.box {
+    width: 400px;
+    height: 60px;
+    background: #f00;
+    margin: 5px; 
+    /*flex-grow: 1;  /* aumenta tudo o maximo q poder*/
+    /*flex-shrink: 1; /* expreme os elementos em tela ex de */
+    /*flex: 1  /* expreme é a junção do grow e do shrink pra aummentar se necessario e expremer*/
+}
+
+.red {
+    background: red;
+    order:1;
+}
+
+.green {
+    background: green;
+    order:2;
+}
+
+.blue {
+    background: blue;
+    order:0;
+}
