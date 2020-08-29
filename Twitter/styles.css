@@ -26,7 +26,8 @@ header#main-header {
     height: 46px;
     background: #FFF;
     box-shadow: 0 1px 1px rgba(0, 0, 0, .25); /* linha*/
-
+    position: relative; /*pra o header ficar por cima do banner e aparecer a linha*/
+    z-index: 1; /*pra o header ficar por cima do banner e aparecer a linha*/
 
 }
 
@@ -80,11 +81,11 @@ header#main-header div.side input {
     width: 220px;
     border: 1px solid #e6ecf0;
     height: 34px;
-    padding: 0 35px 0 12px;
+    padding: 0 35px 0 12px; /*cima, direita, baixo, esquerda*/
     border-radius: 16px;    
     color: #667581;
     font-size: 12px;
-    background:  #f5f8fa url('images/searchh.svg') no-repeat 190px;
+    background:  #f5f8fa url('images/search.svg') no-repeat 190px;
 }
 
 header#main-header div.side img {
@@ -100,7 +101,7 @@ header#main-header div.side button {
 
     font-weight: bold;
 
-    background: #3bb9e3;
+    background: #575c5e;
 
     display: flex;
     align-items: center;
@@ -109,6 +110,97 @@ header#main-header div.side button {
     font-size: 14px;
     color: #FFF;
     border: 0;
+    border-radius: 16px;
+    
+}
+
+div.banner {
+    padding: 0;
+    height: 380px;
+    width: 100%;
+    background: #3bb9e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+
+}
+
+div.bar {
+    height:59px;
+    background: #FFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+}
+
+div.bar .content {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 285px;
+    height: 100%; /*para alinhar*/
+
+}
+
+div.bar .content ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+}
+
+div.bar .content ul li {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: center; /*verticalmente*/
+    position: relative; /*somente para oferecer sua posição ao position absolute embaixo*/
+} 
+
+div.bar .content ul li.active::after { /*o after é posicionado antes do fechamento da tag*/
+    content: "";
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #3bb9e3;
+    position: absolute; /*usa a posição de outro elemento(nesse caso usou do position relative acima*/
+} 
+
+div.bar .content ul li.active strong {
+    color: #3bb9e3;
+}
+
+
+div.bar .content ul li span {
+    color: #667580;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+div.bar .content ul li strong {
+    font-size: 18px;
+    font-weight: bold;
+    color: #667580;
+    margin-top: 2px;
+}
+
+div.bar .content .actions {
+    display: flex;
+    margin-right: 20px;
+}
+
+div.bar .content .actions button {
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    width: 90px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #3bb9e3;
+    border: 1px solid #3bb9e3;
     border-radius: 16px;
     
 }
